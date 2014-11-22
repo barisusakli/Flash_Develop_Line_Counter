@@ -29,7 +29,7 @@ namespace LineCounter
         private Image pluginImage;
 
         // extensions to get
-        static readonly List<string> extensions = new List<string> { "*.as", "*.mxml", "*.html", "*.js", "*.php", "*.css", "*.xml" };
+        static readonly List<string> extensions = new List<string> { "*.as", "*.hx", "*.mxml", "*.html", "*.js", "*.php", "*.css", "*.xml" };
         
 
 		private uint grandTotalLineCount = 0;
@@ -279,7 +279,7 @@ namespace LineCounter
 			uint fileCommentCount = 0;
 			uint fileBlankCount = 0;
 
-            Boolean isInComment = false;//ÊÇ·ñÔÚ×¢ÊÍ¿éÄÚ
+            Boolean isInComment = false;//æ˜¯å¦åœ¨æ³¨é‡Šå—å†…
 			
 			String[] fileContents = File.ReadAllLines(file);
             if (fileContents.Length>0)
@@ -295,7 +295,7 @@ namespace LineCounter
                     String trimmed = line.Trim();
 
                     if (isInComment)
-                        fileCommentCount++;//ÔÚ×¢ÊÍ¿éÄÚ ++
+                        fileCommentCount++;//åœ¨æ³¨é‡Šå—å†… ++
 
 
                     if (trimmed.StartsWith("/*"))
